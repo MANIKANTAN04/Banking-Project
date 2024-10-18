@@ -8,7 +8,7 @@ pipeline {
     stage('Git Checkout') {
       steps {
         echo 'This stage is to clone the repo from github'
-        git branch: 'main', url: 'https://github.com/challadevops1/Banking-Project.git'
+        git branch: 'main', url: 'https://github.com/MANIKANTAN04/Banking-Project.git'
                         }
             }
     stage('Create Package') {
@@ -26,7 +26,7 @@ pipeline {
     stage('Create-Image') {
       steps {
         echo 'This stage will create a image of my application'
-        sh 'docker build -t cbabu85/banking-apps:1.0 .'
+        sh 'docker build -t manik04/banking-apps:1.0 .'
                           }
             }
     stage('Docker-Login') {
@@ -39,7 +39,7 @@ pipeline {
     stage('Docker Push-Image') {
       steps {
         echo 'This stage will push my new image to the dockerhub'
-        sh 'docker push cbabu85/banking-apps:1.0'
+        sh 'docker push manik04/banking-apps:1.0'
             }
                               }
     stage('CreateNew Server then configure and Deploy') {
